@@ -1,0 +1,35 @@
+services:
+  # Web Service API Laravel
+  - type: web
+    name: gbairai-api
+    runtime: docker
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    plan: free
+    region: frankfurt # ou oregon
+    branch: main
+    envVars:
+      - key: APP_NAME
+        value: Gbairai
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: "false"
+      - key: APP_KEY
+        generateValue: true
+      - key: DB_CONNECTION
+        value: pgsql
+      - key: DATABASE_URL
+        fromDatabase:
+          name: gbairai-db
+          property: connectionString
+      - key: FRONTEND_URL
+        sync: false # À renseigner avec l'URL Vercel
+
+databases:
+  # Base de données PostgreSQL (gratuite sur Render)
+  - name: gbairai-db
+    databaseName: gbairai
+    user: gbairai_user
+    plan: free
+    region: frankfurt
