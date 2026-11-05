@@ -33,3 +33,4 @@ databases:
     user: gbairai_user
     plan: free
     region: frankfurt
+
