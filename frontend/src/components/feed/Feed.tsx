@@ -135,7 +135,7 @@ export default function Feed({ onOpenComments, onOpenCreateModal }: FeedProps) {
         <div className="rounded-2xl border border-red-500/20 bg-red-950/20 p-8 text-center text-red-300">
           <p className="text-sm font-semibold">Impossible de contacter le serveur Gbairai.</p>
           <p className="text-xs text-red-400/80 mt-1">
-            Vérifiez que le backend Laravel est bien démarré sur le port 8000.
+            Le serveur se réveille ou est temporairement inaccessible.
           </p>
           <button
             onClick={() => refetch()}
