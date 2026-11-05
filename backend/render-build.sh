@@ -18,3 +18,4 @@ echo "🗄️ Exécution des migrations de base de données..."
 php artisan migrate --force
 
 echo "✅ Build Laravel terminé avec succès !"
+
